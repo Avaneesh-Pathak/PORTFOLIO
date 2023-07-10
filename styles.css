@@ -113,3 +113,53 @@ span{
 .social a:hover{
     color: orange;
 }
+
+
+
+/* Media Queries */
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    nav {
+        width: 90%;
+    }
+
+    .detel,
+    .images,
+    .social {
+        margin-left: 4%;
+    }
+}
+
+/* Smartphone */
+@media screen and (max-width: 480px) {
+    nav {
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px;
+    }
+
+    .detel,
+    .images,
+    .social {
+        margin-left: 0;
+    }
+
+    .images {
+        width: 100%;
+        right: 0;
+    }
+
+    .social {
+        margin-top: 50px;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+    .hero {
+        height: 80vh;
+    }
+}
