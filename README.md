@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Portfolio
 
 ![Data Science Portfolio](https://avaneesh-pathak.github.io/PORTFOLIO/)
