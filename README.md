@@ -1,7 +1,7 @@
 
 # Portfolio
 
-![Data Science Portfolio](https://avaneesh-pathak.github.io/PORTFOLIO/)
+
 
 Welcome to my portfolio! As a last-year mechanical engineering student, I am deeply passionate about delving into the exciting world of data science. This portfolio is a testament to my journey and exploration in this field, showcasing a collection of my projects, career details, and professional work.
 
