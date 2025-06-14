@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Avaneesh Pathak - Data Science Professional" />
+  <title>About | Avaneesh Pathak</title>
+  <link
+    rel="icon"
+    type="image/png"
+    href="images/favicon.png"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Reset + Typography */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #1e293b;
+      background-color: #f8fafc;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Header/Nav */
+    .header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: white;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+    .header.scrolled {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+    .logo img {
+      height: 50px;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    .nav-link {
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+      color: #2563eb;
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #2563eb;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .about-hero {
+      padding-top: 120px;
+      padding-bottom: 60px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+    }
+    .section-title {
+      font-size: 3rem;
+      color: #2563eb;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .section-subtitle {
+      color: #64748b;
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* Details */
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .about-image img {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .about-text h2 {
+      font-size: 2rem;
+      color: #1e293b;
+      margin-bottom: 15px;
+    }
+    .about-text p {
+      margin-bottom: 20px;
+      color: #64748b;
+    }
+
+    /* Timeline/Education */
+    .timeline-item {
+      border-left: 4px solid #2563eb;
+      padding-left: 20px;
+      margin-bottom: 25px;
+    }
+    .timeline-item h4 {
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+    .timeline-item p {
+      color: #64748b;
+    }
+
+    /* Skills */
+    .skills .skill-item {
+      margin-bottom: 15px;
+    }
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+    .skill-bar {
+      background: #e2e8f0;
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .skill-progress {
+      height: 100%;
+      background: #2563eb;
+    }
+
+    /* Approach Cards */
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .approach-card {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    .approach-card:hover {
+      transform: translateY(-5px);
+    }
+    .approach-card i {
+      font-size: 2rem;
+      color: #2563eb;
+      margin-bottom: 15px;
+    }
+
+    /* CTA Button */
+    .cta-section .btn-primary {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+    .cta-section .btn-primary:hover {
+      background: #1e40af;
+    }
+
+    /* Footer */
+    .footer {
+      background: #ffffff;
+      padding: 40px 0;
+      margin-top: 60px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-content .logo img {
+      height: 40px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: #2563eb;
+    }
+    .copyright {
+      color: #64748b;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        justify-content: space-between;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <img src="AP1.png" alt="Avaneesh Pathak Logo" />
+        </a>
+        <button class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="Contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="about-hero">
+    <div class="container">
+      <div data-aos="fade-up">
+        <h1 class="section-title">About Me</h1>
+        <p class="section-subtitle">Get to know me better</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT DETAILS -->
+  <section class="about-details">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image" data-aos="fade-right">
+          <img
+            src="IMG-20230103-WA0000.jpg"
+            alt="Avaneesh Pathak"
+          />
+        </div>
+        <div class="about-text" data-aos="fade-left">
+          <h2>My Journey</h2>
+          <p>
+            I'm Avaneesh Pathak, a passionate Data Science enthusiast
+            currently pursuing my Bachelor's degree in Mechanical
+            Engineering at Feroz Gandhi Institute of Engineering and
+            Technology. My journey into data science began with my curiosity
+            about extracting meaningful insights from data and using them to
+            solve real-world problems.
+          </p>
+          <p>
+            Despite my mechanical engineering background, I've dedicated
+            myself to mastering data science concepts, tools, and
+            technologies. I believe in continuous learning and staying
+            updated with the latest advancements in the field.
+          </p>
+
+          <h3 style="margin-top: 30px;">Education</h3>
+          <div class="timeline" style="margin-top: 20px;">
+            <div class="timeline-item">
+              <h4>Bachelor of Technology — Mechanical Engineering</h4>
+              <p>Feroz Gandhi Institute of Engineering and Technology,
+                Rae Bareli</p>
+              <p>2021 – Present</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 30px;">Technical Skills</h3>
+          <div class="skills" style="margin-top: 20px;">
+            <!-- Repeated skill blocks -->
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Python Programming</span><span>95%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" style="width:95%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Machine Learning</span><span>85%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Data Analysis</span><span>90%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" style="width:90%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Data Visualization</span><span>80%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" style="width:80%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Web Development</span><span>75%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" style="width:75%"></div></div>
+            </div>
+          </div>
+
+          <div class="about-more" data-aos="fade-up" style="margin-top:60px;">
+            <h2>My Approach to Data Science</h2>
+            <p style="margin-top:20px; color:#64748b;">
+              I approach data science problems with a combination of technical
+              expertise and creative problem-solving. My mechanical engineering
+              background gives me a unique perspective on problem-solving and
+              system design, which I apply to data science challenges.
+            </p>
+            <div class="approach-grid">
+              <div class="approach-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Data-Driven Insights</h3>
+                <p style="color:#64748b;">I focus on extracting meaningful
+                  insights from data that can drive business decisions and solve
+                  complex problems.</p>
+              </div>
+              <div class="approach-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Technical Excellence</h3>
+                <p style="color:#64748b;">I maintain high standards of
+                  technical excellence in all my projects, ensuring robust and
+                  scalable solutions.</p>
+              </div>
+              <div class="approach-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Innovative Solutions</h3>
+                <p style="color:#64748b;">I strive to develop innovative
+                  solutions that push the boundaries of what's possible with
+                  data.</p>
+              </div>
+            </div>
+
+            <div class="cta-section" data-aos="fade-up" style="margin-top:60px;text-align:center;">
+              <h2>Interested in Working Together?</h2>
+              <p style="margin:20px auto;max-width:700px;color:#64748b;">
+                Whether you have a project in mind or just want to chat about
+                data science, feel free to reach out!
+              </p>
+              <a href="#contact" class="btn-primary">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <a href="index.html" class="logo">
+            <img src="AP1.png" alt="Logo" />
+          </a>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+          <p class="copyright">
+            &copy; <span id="year"></span> Avaneesh Pathak. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, easing: "ease-in-out", once: true });
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+        });
+      });
+      const header = document.getElementById("header");
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 50);
+      });
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) =>
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const sel = document.querySelector(this.getAttribute("href"));
+          if (sel) {
+            window.scrollTo({
+              top: sel.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        })
+      );
+    </script>
+</body>
+</html>
